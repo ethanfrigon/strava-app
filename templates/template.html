@@ -20,19 +20,32 @@
     </head>
     <body>
         <div id="main">
-            <!-- <p>Value from the list: {{lap_tup[0]}}</p> -->
-            <p>Recent Laps and HRs</p>
-            <ul>
-                {% for ride in lap_tup %}
+            <!-- <p>Value from the list: {{ride_tup[0]}}</p> -->
+            <h1>Recent Laps and HRs</h1>
+            <!-- <table style="width:100%">
+                <tr>
+                    <th>Lap ID</th>
+                    <th>Heart Rate</th>
+                    <th>Blank</th>
+                </tr>
+                {% for ride in ride_tup %}
                   {% for lap in ride %}
                     {% if lap.get('average_heartrate') %}
-                <li>Lap ID:{{lap['id']}}, Heart Rate: {{lap['average_heartrate']}}</li>
+                <tr>
+                    <td>{{lap['id']}}</td>
+                    <td>{{lap['average_heartrate']}}</td>
+                </tr>
                     {% else %}
-                <li>Lap ID: {{lap['id']}}</li>
+                <tr>
+                    <td>{{lap['id']}}</td>
+                </tr>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
-            </ul>
+            </table> -->
+        </div>
+        <div>
+            {{table}}
         </div>
     </body>
 </html>
