@@ -20,6 +20,7 @@ with open('all_activities.json', 'r', -2, encoding="utf8") as a:
 #     print(lap['id'], lap['average_heartrate'])
 
 activity_tup=()
+
 for activity in activities_dict:
   activity_tup += (activity['id'], )
 
