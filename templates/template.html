@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask Template Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div#main {
+                max-width: 500px;
+                padding: 20px;
+            }
+
+            nav .title {                                                        
+                font-weight: bold;
+            }
+
+            a.active {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <!-- <p>Value from the list: {{lap_tup[0]}}</p> -->
+            <p>Recent Laps and HRs</p>
+            <ul>
+                {% for ride in lap_tup %}
+                  {% for lap in ride %}
+                    {% if lap.get('average_heartrate') %}
+                <li>Lap ID:{{lap['id']}}, Heart Rate: {{lap['average_heartrate']}}</li>
+                    {% else %}
+                <li>Lap ID: {{lap['id']}}</li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
+

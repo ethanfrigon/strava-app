@@ -1,5 +1,11 @@
 import json
 import requests
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route("/")
+def template():
+  return render_template('template.html', lap_tup=lap_tup)
 
 # with open('sample_laps.json', 'r') as f:
 #   laps_dict =  json.load(f)
@@ -15,7 +21,7 @@ activity_tup=()
 for activity in activities_dict:
   activity_tup += (activity['id'], )
 
-# print(activity_tup)
+# print(activity_tup) 
 
 sliced_tup = activity_tup[0:5]
 # print(sliced_tup)
@@ -26,7 +32,7 @@ sliced_tup = activity_tup[0:5]
 URL_BASE = "https://www.strava.com/api/v3/activities/"
 URL_LAPS ="/laps"
 
-ACCESS_TOKEN = "d9510ad1154fe0355141d32863bbb8e473bfe53f"
+ACCESS_TOKEN = "b18e4ff74658860c5627aef7688ccd6d99fbf36c"
 
 PARAMS = {'access_token': ACCESS_TOKEN }
 
@@ -38,9 +44,15 @@ for activity_id in sliced_tup:
 
 # print(lap_tup)
 
-for lap in lap_tup[0]:
-  # if lap['average_heartrate'] > 150:
-  print(lap)
+# for ride in lap_tup:
+#   # if lap['average_heartrate'] > 150:
+#   # print(ride)
+#   for lap in ride:
+#     if lap.get('average_heartrate'):
+#       print(lap['id'], lap['average_heartrate'])
+#       # lap.get('average_heartrate')
+#     else:
+#       print(lap['id'])
   # print(lap['id'], lap['average_heartrate'])
 
 
@@ -65,3 +77,6 @@ for lap in lap_tup[0]:
 # first_lap = data[0]
 
 # print(first_lap['average_heartrate'])
+
+if __name__ == '__main__':
+  app.run(debug=True, host="0.0.0.0", port=8080)    
