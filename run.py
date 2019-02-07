@@ -32,7 +32,7 @@ sliced_tup = activity_tup[0:5]
 URL_BASE = "https://www.strava.com/api/v3/activities/"
 URL_LAPS ="/laps"
 
-ACCESS_TOKEN = "b18e4ff74658860c5627aef7688ccd6d99fbf36c"
+ACCESS_TOKEN = "5795d5436fd887179045070f33b460ffdcc1e8f0"
 
 PARAMS = {'access_token': ACCESS_TOKEN }
 
