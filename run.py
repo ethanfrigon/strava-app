@@ -36,7 +36,7 @@ URL_BASE = "https://www.strava.com/api/v3/activities/"
 URL_LAPS ="/laps"
 
 
-ACCESS_TOKEN = "6bf04769b73e2e6c6a8d4a431aef20a4edee9bc7"
+ACCESS_TOKEN = "eb50b2bada1ec67109aa76a551d46f34741733fd"
 
 PARAMS = {'access_token': ACCESS_TOKEN }
 
