@@ -50,6 +50,9 @@ lap_list=[]
 for ride in ride_tup:
   for lap in ride:
     if lap.get('average_heartrate'):
+      lap['distance'] = round(lap['distance']/1609.344, 2)
+      lap['average_speed'] = round(lap['average_speed'] * 2.237, 2)
+      lap['total_elevation_gain'] = round(lap['total_elevation_gain'] * 3.281, 2)
       lap_list.append(lap)
     # lap_tup+=(lap, )
     # if lap.get('average_heartrate'):
@@ -60,10 +63,10 @@ for ride in ride_tup:
 # print(ride_tup)
 
 # converted_lap_list=[]
-for lap in lap_list:
-  lap['distance'] = round(lap['distance']/1609.344, 2)
-  lap['average_speed'] = round(lap['average_speed'] * 2.237, 2)
-  lap['total_elevation_gain'] = round(lap['total_elevation_gain'] * 3.281, 2)
+# for lap in lap_list:
+#   lap['distance'] = round(lap['distance']/1609.344, 2)
+#   lap['average_speed'] = round(lap['average_speed'] * 2.237, 2)
+#   lap['total_elevation_gain'] = round(lap['total_elevation_gain'] * 3.281, 2)
 
 
 # print(lap_list)
